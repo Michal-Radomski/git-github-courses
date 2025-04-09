@@ -1,1 +1,6 @@
 git config --global --get diff.tool
+
+git difftool <hash commit older> <hash commit newer>
+
+git diff --cached
+git status -s
