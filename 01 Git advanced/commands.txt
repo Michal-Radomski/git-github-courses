@@ -5,3 +5,10 @@ git difftool <hash commit older> <hash commit newer>
 
 git diff --cached
 git status -s
+
+git init
+git add README.md
+git commit -m "First commit"
+git remote add origin <url>
+git push -u origin master (-u -> --set-upstream)
+git remote -v
