@@ -12,3 +12,5 @@ git commit -m "First commit"
 git remote add origin <url>
 git push -u origin master (-u -> --set-upstream)
 git remote -v
+
+git commit --amend
