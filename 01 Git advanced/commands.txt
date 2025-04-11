@@ -13,4 +13,8 @@ git remote add origin <url>
 git push -u origin master (-u -> --set-upstream)
 git remote -v
 
+git log --oneline
 git commit --amend
+
+git reflog
+git reflog HEAD@{2.days.ago}
