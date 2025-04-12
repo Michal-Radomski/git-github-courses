@@ -87,11 +87,14 @@ git switch <branch name>
 
 git checkout -b <brach name>
 
-git stash save <stash name>
+git stash save <stash name> (only local!)
 git stash list
 git stash apply <stash name>
 git stash pop <stash number>
 git stash show stash@{0}
+git stash apply stash@{0}
+git stash drop stash@{1}
+git stash clear
 
 git submodule add <submodule repo url>
 
@@ -100,9 +103,10 @@ git submodule init
 git submodule update
 git clone --recurse-submodules <main repo url> (= three last commands)
 
-git tag -l
+git tag -l (also git tag -> list of tags)
 git tag <light tag name>
 git show <tag name>
+git tag -l "first*" (pattern)
 
 git tag -a <annotated tag name>
 git push origin --tags
