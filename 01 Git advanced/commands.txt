@@ -18,3 +18,13 @@ git commit --amend
 
 git reflog
 git reflog HEAD@{2.days.ago}
+
+git diff HEAD@{5} HEAD@{4}
+git difftool HEAD@{5} HEAD@{4}
+
+git diff HEAD@{1.min.ago} HEAD@{2.days.ago}
+git difftool HEAD@{1.min.ago} HEAD@{2.days.ago}
+
+git reflog expire --expire-unreachable=now --all -> This prunes all reflog entries that are not reachable from any current
+git prune
+git gc --prune=now -> This is used for garbage collection in a Git repository
