@@ -38,3 +38,6 @@ git reset <file name>
 git reset <commit hash>
 
 git reset head --hard
+
+git clean -d -x -f -i
+git reset <commit hash> --hard
