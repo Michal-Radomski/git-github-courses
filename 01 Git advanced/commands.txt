@@ -1,4 +1,5 @@
 git config --global --list
+git config --global -edit
 git config --global --get diff.tool
 
 git difftool <hash commit older> <hash commit newer>
@@ -28,3 +29,9 @@ git difftool HEAD@{1.min.ago} HEAD@{2.days.ago}
 git reflog expire --expire-unreachable=now --all -> This prunes all reflog entries that are not reachable from any current
 git prune
 git gc --prune=now -> This is used for garbage collection in a Git repository
+
+git fetch origin --prune
+git config --global fetch.prune true
+
+git reset HEAD
+git reset <file name>
