@@ -1,5 +1,5 @@
 git config --global --list
-git config --global -edit
+git config --global --edit (includes aliases)
 git config --global --get diff.tool
 
 git config --global core.editor "nano"
@@ -110,3 +110,4 @@ git tag -l "first*" (pattern)
 
 git tag -a <annotated tag name>
 git push origin --tags
+git config --global push.followTags true
