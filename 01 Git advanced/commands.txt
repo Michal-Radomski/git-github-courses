@@ -2,6 +2,8 @@ git config --global --list
 git config --global -edit
 git config --global --get diff.tool
 
+git config --global core.editor "nano"
+
 git difftool <hash commit older> <hash commit newer>
 
 git diff --cached
@@ -14,7 +16,15 @@ git remote add origin <url>
 git push -u origin master (-u -> --set-upstream)
 git remote -v
 
+git log
+git log --stat
+git log --patch
+git log --graph
+git log --after=06/0/2025
+git log --since=06/0/2025
 git log --oneline
+git log --oneline --decorate -n 1
+
 git commit --amend
 
 git reflog
@@ -33,6 +43,15 @@ git gc --prune=now -> This is used for garbage collection in a Git repository
 git fetch origin --prune
 git config --global fetch.prune true
 
+git fetch (new branch from remote repo to local repo)
+git push origin <branch name>
+git pull
+
+git merge <branch name> (merges to the current branch)
+
+git merge --continue (after conflicts)
+git merge --abort
+
 git reset HEAD
 git reset <file name>
 git reset <commit hash>
@@ -41,6 +60,11 @@ git reset head --hard
 
 git clean -d -x -f -i
 git reset <commit hash> --hard
+
+git reset <commit hash> (mixed reset)
+git reset --mixed <commit hash> (mixed reset)
+git reset --soft <commit hash> (soft reset)
+git reset --hard <commit hash>
 
 git revert <commit hash>
 git revert --abort
@@ -54,3 +78,31 @@ git cherry-pick <commit hash 1> <commit hash 2> <commit hash 3>
 
 git branch -d <branch-name> (if fully merged)
 git branch -D <branch-name> (forces to delete)
+
+git branch
+git branch <branch name> 
+
+git branch --all
+git switch <branch name>
+
+git checkout -b <brach name>
+
+git stash save <stash name>
+git stash list
+git stash apply <stash name>
+git stash pop <stash number>
+git stash show stash@{0}
+
+git submodule add <submodule repo url>
+
+git clone <repo url> (cloning the main repo)
+git submodule init
+git submodule update
+git clone --recurse-submodules <main repo url> (= three last commands)
+
+git tag -l
+git tag <light tag name>
+git show <tag name>
+
+git tag -a <annotated tag name>
+git push origin --tags
