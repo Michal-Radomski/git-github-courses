@@ -41,3 +41,5 @@ git reset head --hard
 
 git clean -d -x -f -i
 git reset <commit hash> --hard
+
+git revert <commit hash>
