@@ -14,6 +14,8 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
+        working-directory: "./02 GitHub Actions/01_second_action"
         run: npm ci
       - name: Run tests
+        working-directory: "./02 GitHub Actions/01_second_action"
         run: npm test
