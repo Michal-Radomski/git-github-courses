@@ -20,7 +20,7 @@ jobs:
         working-directory: "./02 GitHub Actions/01_second_action"
         run: npm test
   deploy:
-    needs: test
+    needs: test # deploy runs after test!
     runs-on: ubuntu-latest
     defaults:
       run:

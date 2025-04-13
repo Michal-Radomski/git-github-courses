@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output GitHub context
-        run: echo "${{ toJSON(github) }}"
+        run: echo "${{ toJSON(github) }}" # The toJSON() function converts an object into a JSON-formatted string and takes the github context.
