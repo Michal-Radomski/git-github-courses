@@ -16,6 +16,8 @@ git remote add origin <url>
 git push -u origin master (-u -> --set-upstream)
 git remote -v
 
+git remote set-url origin <url with user + password>
+
 git log
 git log --stat
 git log --patch
@@ -86,6 +88,9 @@ git branch --all
 git switch <branch name>
 
 git checkout -b <brach name>
+
+git checkout <commit hash>
+checkout master (back)
 
 git stash save <stash name> (only local!)
 git stash list
