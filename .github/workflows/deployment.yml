@@ -22,6 +22,9 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./02 GitHub Actions/01_second_action"
     steps:
       - name: Get code
         uses: actions/checkout@v3
