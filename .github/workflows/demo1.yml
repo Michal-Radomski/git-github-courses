@@ -19,19 +19,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./02 GitHub Actions/01_second_action"
     steps:
       - name: Output event data
         run: echo "${{ toJson(github.event_name) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
+        working-directory: "./02 GitHub Actions/01_second_action"
         run: npm ci
       - name: Test code
+        working-directory: "./02 GitHub Actions/01_second_action"
         run: npm run test
       - name: Build code
+        working-directory: "./02 GitHub Actions/01_second_action"
         run: npm run build
       - name: Deploy project
+        working-directory: "./02 GitHub Actions/01_second_action"
         run: echo "Deploying..."
