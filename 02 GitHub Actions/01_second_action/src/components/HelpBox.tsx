@@ -1,4 +1,5 @@
 import React from "react";
+import { string } from "prop-types";
 
 import "./HelpBox.scss";
 
@@ -12,5 +13,10 @@ function HelpBox({ title, text }: { title: string; text: string }): React.JSX.El
     </React.Fragment>
   );
 }
+
+HelpBox.propTypes = {
+  title: string,
+  text: string,
+};
 
 export default HelpBox;

@@ -5,7 +5,11 @@ jobs:
   output-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Output event details
-        run: echo "${{ toJson(github.event_name) }}"
-      - name: Output action details
-        run: echo "${{ toJson(github.action) }}"
+      # - name: Output event details
+      #   run: echo "${{ toJson(github.event_name) }}"
+      # - name: Output action details
+      #   run: echo "${{ toJson(github.action) }}"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
