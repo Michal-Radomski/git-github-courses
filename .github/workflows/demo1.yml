@@ -19,6 +19,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./02 GitHub Actions/01_second_action"
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
