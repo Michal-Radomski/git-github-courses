@@ -1,5 +1,21 @@
 name: Events Demo 1
-on: workflow_dispatch
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main # main
+      - "dev-*" # dev-new dev-this-is-new
+      - "feat/**" # feat/new feat/new/button
+  workflow_dispatch: # No events but ":" at the end!
+  push:
+    branches:
+      - main # main
+      - "dev-*" # dev-new dev-this-is-new
+      - "feat/**" # feat/new feat/new/button
+      # developer-1
+    paths-ignore:
+      - ".github/workflows/*"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -7,8 +23,8 @@ jobs:
       run:
         working-directory: "./02 GitHub Actions/01_second_action"
     steps:
-      - name: Output event data
-        run: echo "${{ toJSON(github.event_name) }}"
+      # - name: Output event data
+      #   run: echo "${{ toJSON(github.event_name) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
