@@ -45,6 +45,8 @@ jobs:
         run: npm run build
       - name: Build website
         run: npm run build
+      - name: List directory
+        run: ls -la
       - name: List dist directory
         run: ls -la dist
 
