@@ -49,6 +49,8 @@ jobs:
         run: ls -la
       - name: List dist directory
         run: ls -la dist
+      - name: Print working directory
+        run: pwd
 
       # - name: Publish JS filename
       #   id: publish
@@ -57,7 +59,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: dist
+          path: "./02 GitHub Actions/01/dist"
           # path: |
           #   dist
           #   package.json
