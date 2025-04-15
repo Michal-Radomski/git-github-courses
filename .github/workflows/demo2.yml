@@ -29,8 +29,8 @@ jobs:
     defaults:
       run:
         working-directory: "./02 GitHub Actions/01"
-    # outputs:
-    #   script-file: ${{ steps.publish.outputs.script-file }}
+    outputs:
+      script-file: ${{ steps.publish.outputs.script-file }}
     steps:
       - name: Get code
         uses: actions/checkout@v4
@@ -54,20 +54,20 @@ jobs:
           # path: |
           #   dist
           #   package.json
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./02 GitHub Actions/01"
-    steps:
-      - name: Get build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-files
-      - name: Output contents
-        run: ls
-      # - name: Output filename
-      #   run: echo "${{ needs.build.outputs.script-file }}"
-      - name: Deploy
-        run: echo "Deploying..."
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: "./02 GitHub Actions/01"
+  #   steps:
+  #     - name: Get build artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: dist-files
+  #     - name: Output contents
+  #       run: ls
+  #     - name: Output filename
+  #       run: echo "${{ needs.build.outputs.script-file }}"
+  #     - name: Deploy
+  #       run: echo "Deploying..."
