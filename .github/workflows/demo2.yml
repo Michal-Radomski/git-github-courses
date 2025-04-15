@@ -11,9 +11,9 @@ jobs:
         working-directory: "./02 GitHub Actions/01"
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -29,23 +29,23 @@ jobs:
     defaults:
       run:
         working-directory: "./02 GitHub Actions/01"
-    # outputs:
-    #   script-file: ${{ steps.publish.outputs.script-file }}
+    outputs:
+      script-file: ${{ steps.publish.outputs.script-file }}
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      # - name: Cache dependencies
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: ~/.npm
-      #     key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
       - name: Build website
         run: npm run build
-      # - name: Publish JS filename
-      #   id: publish
-      #   run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
+      - name: Publish JS filename
+        id: publish
+        run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -67,7 +67,7 @@ jobs:
           name: dist-files
       - name: Output contents
         run: ls
-      # - name: Output filename
-      #   run: echo "${{ needs.build.outputs.script-file }}"
+      - name: Output filename
+        run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
