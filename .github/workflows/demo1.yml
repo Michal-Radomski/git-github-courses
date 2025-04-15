@@ -25,14 +25,14 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
-        working-directory: "./02 GitHub Actions/01_second_action"
+        working-directory: "./02 GitHub Actions/01"
         run: npm ci
       - name: Test code
-        working-directory: "./02 GitHub Actions/01_second_action"
+        working-directory: "./02 GitHub Actions/01"
         run: npm run test
       - name: Build code
-        working-directory: "./02 GitHub Actions/01_second_action"
+        working-directory: "./02 GitHub Actions/01"
         run: npm run build
       - name: Deploy project
-        working-directory: "./02 GitHub Actions/01_second_action"
+        working-directory: "./02 GitHub Actions/01"
         run: echo "Deploying..."
