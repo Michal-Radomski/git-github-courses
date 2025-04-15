@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "./02 GitHub Actions/01"
+        working-directory: "02 GitHub Actions/01"
     steps:
       - name: Get build artifacts
         uses: actions/download-artifact@v4
