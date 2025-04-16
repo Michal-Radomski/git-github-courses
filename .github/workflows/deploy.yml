@@ -38,9 +38,9 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./02 GitHub Actions/02"
+    # defaults:
+    #   run:
+    #     working-directory: "./02 GitHub Actions/02"
     steps:
       - name: Output information
         env:
