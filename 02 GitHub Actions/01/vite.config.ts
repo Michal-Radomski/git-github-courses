@@ -9,9 +9,16 @@ export default defineConfig({
     host: true,
     port: 3000,
   },
+  // test: {
+  //   globals: true,
+  //   environment: "jsdom",
+  //   setupFiles: "./src/test/setup.js",
+  // },
   test: {
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/test/setup.js",
+    reporters: ["json"],
+    outputFile: "test.json",
   },
 });
