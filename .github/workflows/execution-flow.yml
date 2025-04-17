@@ -89,7 +89,7 @@ jobs:
         run: echo "Deploying..."
   report:
     needs: [lint, deploy]
-    if: failure()
+    # if: failure()
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -98,4 +98,4 @@ jobs:
       - name: Output information
         run: |
           echo "Something went wrong"
-          echo "${{ toJSON(github) }}"
+          echo "${{ toJSON(github.action) }}"
