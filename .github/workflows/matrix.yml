@@ -1,3 +1,4 @@
+# Min version of Node required: 18; https://github.com/vitejs/vite/issues/19260
 name: Matrix Demo
 on: push
 jobs:
@@ -5,7 +6,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        node-version: [12, 14, 16]
+        node-version: [12, 14, 16, 20]
         operating-system: [ubuntu-latest, windows-latest]
         include:
           - node-version: 18
