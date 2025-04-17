@@ -1,6 +1,6 @@
-# Min version of Node required: 18; https://github.com/vitejs/vite/issues/19260
+#* Min version of Node required: 18; https://github.com/vitejs/vite/issues/19260
 name: Matrix Demo
-on: push
+on: workflow_dispatch
 jobs:
   build:
     continue-on-error: true
