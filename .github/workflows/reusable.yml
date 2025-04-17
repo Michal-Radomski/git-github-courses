@@ -19,9 +19,6 @@ jobs:
     outputs:
       outcome: ${{ steps.set-result.outputs.step-result }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./02 GitHub Actions/01"
     steps:
       - name: Get Code
         uses: actions/download-artifact@v4
