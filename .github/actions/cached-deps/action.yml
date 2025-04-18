@@ -20,7 +20,7 @@ runs:
         path: node_modules
         key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
     - name: Install dependencies
-      working-directory: "./02 GitHub Actions/02"
+      working-directory: "./02 GitHub Actions/01"
       id: install
       if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
       run: |
