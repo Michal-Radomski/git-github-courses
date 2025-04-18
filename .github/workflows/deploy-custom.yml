@@ -103,11 +103,8 @@ jobs:
         run: echo "Deploying..."
   information:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./02 GitHub Actions/01"
     steps:
       - name: Get code
         uses: actions/checkout@v4
       - name: Run custom action
-        uses: ./.github/actions/deploy-3s-javascript
+        uses: ./.github/actions/deploy-s3-javascript
