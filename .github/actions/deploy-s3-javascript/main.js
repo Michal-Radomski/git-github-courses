@@ -10,8 +10,8 @@ const core_1 = __importDefault(require("@actions/core"));
 // import exec from "@actions/exec";
 // console.log("core, github, exec:", core, github, exec);
 (function run() {
-  core_1.default === null || core_1.default === void 0 ? void 0 : core_1.default.notice("Hello!");
-  core_1?.notice("Hello!");
+  core_1.default === null || core_1.default === void 0 ? void 0 : core_1.default.notice("Hello!"); //* Which works?
+  core_1?.notice("Hello!"); //* Which works?
   // // 1) Get some input values
   // const bucket: string = core.getInput("bucket", { required: true });
   // const bucketRegion: string = core.getInput("bucket-region", { required: true });
