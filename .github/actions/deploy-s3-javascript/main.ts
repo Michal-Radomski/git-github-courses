@@ -5,7 +5,7 @@ import core from "@actions/core";
 // console.log("core, github, exec:", core, github, exec);
 
 (function run(): void {
-  core.notice("Hello!");
+  core?.notice("Hello!");
   // // 1) Get some input values
   // const bucket: string = core.getInput("bucket", { required: true });
   // const bucketRegion: string = core.getInput("bucket-region", { required: true });
