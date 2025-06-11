@@ -18,6 +18,8 @@ git remote -v
 
 git remote set-url origin <url with user + password>
 
+git branch --set-upstream-to=origin/master (git branch -u origin/master)
+
 git log
 git log --stat
 git log --patch
