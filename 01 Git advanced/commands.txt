@@ -31,6 +31,10 @@ git log --oneline --decorate -n 1
 
 git commit --amend
 
+git diff --name-only HEAD HEAD~1
+git show --name-only
+git show --name-status
+
 git reflog
 git reflog HEAD@{2.days.ago}
 
