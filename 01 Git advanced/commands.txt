@@ -122,3 +122,5 @@ git tag -l "first*" (pattern)
 git tag -a <annotated tag name>
 git push origin --tags
 git config --global push.followTags true
+
+git lfs track "*.psd"
